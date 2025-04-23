@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Clã Arakawa</title>
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #3b4d32;
+      background-image: radial-gradient(circle at top, #7c9a6d 0%, #3b4d32 100%);
+      font-family: 'MedievalSharp', cursive;
+      color: #f1f4ec;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 12vh auto;
+      background: rgba(58, 72, 45, 0.9);
+      padding: 40px;
+      border: 3px solid #a8c194;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #a8c194;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #cfe8bc;
+      text-shadow: 2px 2px 4px #2a3520;
+    }
+
+    p.enigma {
+      font-size: 1.4rem;
+      line-height: 2;
+      margin-bottom: 30px;
+      color: #f0f8e7;
+    }
+
+    input[type="text"] {
+      width: 60%;
+      padding: 12px;
+      font-size: 1.2rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid #c1d6a9;
+      color: #f0fff4;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 1rem;
+      background: #6e8c59;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+      display: block;
+      margin: 10px auto 0 auto;
+    }
+
+    button:hover {
+      background: #89a96e;
+    }
+
+    #erro {
+      color: #ffdddd;
+      font-size: 1rem;
+      margin-top: 10px;
+    }
+
+    .terra {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+      animation: tremor 10s ease-in-out infinite;
+      opacity: 0.04;
+    }
+
+    @keyframes tremor {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(2px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="terra"></div>
+
+  <div class="container">
+    <h1>Clã Arakawa</h1>
+    <p class="enigma">
+      “Entre rios e vales, no barro encontrei,<br>
+      A força da terra, o lar que sonhei.<br>
+      Com as mãos calejadas, moldamos a lei.”
+    </p>
+
+    <input type="text" id="senha" placeholder="Digite a senha...">
+    <button onclick="verificarSenha()">Acessar</button>
+    <p id="erro"></p>
+  </div>
+
+  <script>
+    function verificarSenha() {
+      const senha = document.getElementById("senha").value.trim().toUpperCase();
+      if (senha === "ARAKAWA") {
+        window.location.href = "pagina2.html";
+      } else {
+        document.getElementById("erro").textContent = "Senha incorreta. A terra ainda guarda seus segredos.";
+      }
+    }
+  </script>
+</body>
+</html>
